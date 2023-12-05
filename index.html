@@ -21,7 +21,7 @@
     setCookie("account", "undefined")
     alert(document.cookie)
     // EventSource object of javascript listens the streaming events from our go server and prints the message.
-    var stream = new EventSource("https://michail-stepuro.dev.altkraft.com/ajax/account_stream");
+    var stream = new EventSource("https://michail-stepuro.dev.altkraft.com/ajax/account_stream", {withCredentials: true});
     stream.addEventListener("broadcast_oper", function (e) {
         e.
             $('.event-data').append(e.data + "</br>")
