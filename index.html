@@ -17,11 +17,11 @@
 </body>
 
 <script>
-    setCookie("jwt", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhaWQiOjQsInVubSI6ImFkbWluIiwiaXAiOiIxOTIuMTY4LjAuMTUxIiwiZXhwIjoxNzAxODAxNTk2LCJpc3MiOiJ3ZWJjb250cm9sIn0.8PUob_57o32ihZ-Sc6vC055UtmHZCvwN62jR_5cBRMk")
-    setCookie("account", "undefined")
     alert(document.cookie)
     // EventSource object of javascript listens the streaming events from our go server and prints the message.
     var stream = new EventSource("https://michail-stepuro.dev.altkraft.com/ajax/account_stream", {withCredentials: true});
+    setCookie("jwt", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhaWQiOjQsInVubSI6ImFkbWluIiwiaXAiOiIxOTIuMTY4LjAuMTUxIiwiZXhwIjoxNzAxODAxNTk2LCJpc3MiOiJ3ZWJjb250cm9sIn0.8PUob_57o32ihZ-Sc6vC055UtmHZCvwN62jR_5cBRMk")
+    setCookie("account", "undefined")
     stream.addEventListener("broadcast_oper", function (e) {
         e.
             $('.event-data').append(e.data + "</br>")
